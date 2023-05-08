@@ -36,7 +36,7 @@ public class MyRestController {
     @PostMapping
     public ResponseEntity<User> createUser(@RequestBody User user) {
         userService.addUser(user);
-        return ResponseEntity.ok(user);
+        return ResponseEntity.ok(userService.getUserByUsername(user.getUsername()));
     }
 
     @PatchMapping
